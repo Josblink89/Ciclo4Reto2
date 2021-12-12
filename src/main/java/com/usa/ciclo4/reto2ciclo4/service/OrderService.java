@@ -19,9 +19,7 @@ public class OrderService {
         return orderRepository.getAll();
     }
 
-    public List<Order> getZona() {
-        return orderRepository.getZona();
-    }
+   
     public Optional<Order> getOrder(int id) {
         return orderRepository.getOrder(id);
     }
