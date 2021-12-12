@@ -21,9 +21,10 @@ public class OrderController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Order> getOrder(@PathVariable("id") int id) {
+    public Optional<Order> getCleaningOrder(@PathVariable("id") int id) {
         return orderService.getCleaningOrder(id);
     }
+    
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody Order gadget) {

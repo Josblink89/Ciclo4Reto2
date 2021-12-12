@@ -1,6 +1,6 @@
 package com.usa.ciclo4.reto2ciclo4.model;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.Map;
 
 import org.springframework.data.annotation.Id;
@@ -26,7 +26,7 @@ public class Order {
     
     private Map<String, Product> products;
     private Map<String, Integer> quantities;
-    
+
     public static String getPENDING() {
         return PENDING;
     }
