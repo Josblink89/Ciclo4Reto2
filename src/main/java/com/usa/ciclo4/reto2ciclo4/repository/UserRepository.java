@@ -38,11 +38,20 @@ public class UserRepository {
         return user.isPresent();
     }
 
+    public boolean getCleaningUser(Integer id){
+        Optional<User> user = userCrudRepository.findById(id);
+        return user.isPresent();
+    }
+
     public Optional<User> authenticateUser(String email, String password){
         return userCrudRepository.findByEmailAndPassword(email, password);
     }
 
     public Optional<User> getUserByNameOrEmail(String name, String email){
         return userCrudRepository.findByNameOrEmail(name, email);
+    }
+
+    public List<User> idExists(Integer id) {
+        return null;
     }
 }

@@ -81,10 +81,13 @@ public class UserService {
         return userBoolean;
     }
 
+    public List<User> idExists(Integer id) {
+        return userRepository.idExists(id);
+    }
+
     public boolean emailExists(String email) {
         return userRepository.emailExists(email);
     }
-
    
 
     public User authenticateUser (String email, String password) {
