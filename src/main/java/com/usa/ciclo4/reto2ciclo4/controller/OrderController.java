@@ -22,7 +22,7 @@ public class OrderController {
 
     @GetMapping("/{id}")
     public Optional<Order> getOrder(@PathVariable("id") int id) {
-        return orderService.getOrder(id);
+        return orderService.getCleaningOrder(id);
     }
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
