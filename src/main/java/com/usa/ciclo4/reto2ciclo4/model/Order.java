@@ -7,13 +7,12 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Document(collection = "orders")
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+
 public class Order {
     public static String PENDING = "Pendiente";
     public static String APROVED = "Aprobada";
@@ -27,6 +26,7 @@ public class Order {
     
     private Map<String, Product> products;
     private Map<String, Integer> quantities;
+    
     public static String getPENDING() {
         return PENDING;
     }
@@ -80,6 +80,8 @@ public class Order {
     }
     public void setQuantities(Map<String, Integer> quantities) {
         this.quantities = quantities;
-    } 
+    }
+
+    
        
 }

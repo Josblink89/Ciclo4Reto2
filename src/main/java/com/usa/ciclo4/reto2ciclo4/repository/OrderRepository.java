@@ -19,10 +19,7 @@ public class OrderRepository {
         return (List<Order>) orderCrudRepository.findAll();
     }
 
-    public List<Order> getZona() {
-        return (List<Order>) orderCrudRepository.findAll();
-
-    }
+    
     public Optional<Order> getOrder(int id) {
         return orderCrudRepository.findById(id);
     }

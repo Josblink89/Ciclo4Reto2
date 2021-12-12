@@ -2,10 +2,8 @@ package com.usa.ciclo4.reto2ciclo4.service;
 
 import java.util.List;
 import java.util.Optional;
-
 import com.usa.ciclo4.reto2ciclo4.model.Order;
 import com.usa.ciclo4.reto2ciclo4.repository.OrderRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -73,7 +71,5 @@ public class OrderService {
         return aBoolean;
     }
 
-    public Optional<Order> getZona(String zone) {
-        return null;
-    }
+    
 }
