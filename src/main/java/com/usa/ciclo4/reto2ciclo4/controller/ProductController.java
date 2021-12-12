@@ -1,11 +1,9 @@
 package com.usa.ciclo4.reto2ciclo4.controller;
 import com.usa.ciclo4.reto2ciclo4.service.ProductService;
 import com.usa.ciclo4.reto2ciclo4.model.Product;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -13,7 +11,7 @@ import java.util.Optional;
 @RequestMapping("/api/cookware")
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class ProductController {
-    
+
     @Autowired
     private ProductService productService;
 

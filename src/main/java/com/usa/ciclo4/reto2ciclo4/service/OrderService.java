@@ -18,13 +18,11 @@ public class OrderService {
     }
 
    
-    public Optional<Order> getOrder(int id) {
+    public Optional<Order> getCleaningOrder(int id) {
         return orderRepository.getOrder(id);
     }
 
-    public Order create(Order order) {
-        
-    
+    public Order save(Order order) {
         Optional<Order> orderIdMaxima = orderRepository.lastUserId();
         
       
@@ -64,7 +62,7 @@ public class OrderService {
     }
 
     public boolean delete(int id) {
-        Boolean aBoolean = getOrder(id).map(order -> {
+        Boolean aBoolean = getCleaningOrder(id).map(order -> {
             orderRepository.delete(order);
             return true;
         }).orElse(false);

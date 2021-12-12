@@ -1,15 +1,11 @@
 package com.usa.ciclo4.reto2ciclo4.controller;
-
 import java.util.List;
 import java.util.Optional;
-
 import com.usa.ciclo4.reto2ciclo4.model.Order;
 import com.usa.ciclo4.reto2ciclo4.service.OrderService;
 import org.springframework.http.HttpStatus;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 
 @RestController
 @RequestMapping("/api/order")
@@ -31,7 +27,7 @@ public class OrderController {
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody Order gadget) {
-        orderService.create(gadget);
+        orderService.save(gadget);
     }
 
     @PutMapping("/update")
