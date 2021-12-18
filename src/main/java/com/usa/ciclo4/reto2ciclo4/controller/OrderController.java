@@ -42,4 +42,24 @@ public class OrderController {
     public boolean delete(@PathVariable("id") int id) {
         return orderService.delete(id);
     }
+
+    @GetMapping("zona/{zone}")
+    public List<Order> findByZone(@PathVariable("zone") String zone) {
+        return orderService.findByZone(zone);
+    }
+
+    @GetMapping("/salesman/{id}")
+    public List<Order> ordersSalesManByID(@PathVariable("id") Integer id){
+        return orderService.ordersSalesManByID(id);
+    }
+
+    @GetMapping("/state/{state}/{id}")
+    public List<Order> ordersSalesManByState(@PathVariable("state") String state, @PathVariable("id") Integer id){
+        return orderService.ordersSalesManByState(state, id);
+    }
+
+    @GetMapping("/date/{date}/{id}")
+    public List<Order> ordersSalesManByDate(@PathVariable("date") String dateStr,@PathVariable("id") Integer id){
+        return orderService.ordersSalesManByDate(dateStr,id);
+    }
 }

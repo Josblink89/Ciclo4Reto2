@@ -7,11 +7,14 @@ import com.usa.ciclo4.reto2ciclo4.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class OrderService {
 
     @Autowired
     private OrderRepository orderRepository;
+
+    
 
     public List<Order> getAll() {
         return orderRepository.getAll();
@@ -20,6 +23,10 @@ public class OrderService {
    
     public Optional<Order> getCleaningOrder(int id) {
         return orderRepository.getOrder(id);
+    }
+
+    public List<Order> findByZone(String zone){
+        return orderRepository.findByZone(zone);
     }
 
     public Order save(Order order) {
@@ -68,6 +75,19 @@ public class OrderService {
         }).orElse(false);
         return aBoolean;
     }
+
+    public List<Order> ordersSalesManByID(Integer id){
+        return orderRepository.ordersSalesManByID(id);
+    }
+
+    public List<Order> ordersSalesManByState(String state, Integer id){
+        return orderRepository.ordersSalesManByState(state, id);
+    }
+
+    public List<Order> ordersSalesManByDate(String dateStr, Integer id){
+        return orderRepository.ordersSalesManByDate(dateStr,id);
+    }
+
 
     
 }
