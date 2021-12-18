@@ -43,4 +43,13 @@ public class ProductController {
         return productService.delete(reference);
     }
 
+    @GetMapping("/price/{price}")
+    public List<Product> productByPrice(@PathVariable("price") double precio) {
+        return productService.productByPrice(precio);
+    }
+
+    @GetMapping("/description/{description}")
+    public List<Product> findByDescriptionLike(@PathVariable("description") String description) {
+        return productService.findByDescriptionLike(description);
+    }
 }

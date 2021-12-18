@@ -32,4 +32,11 @@ public class ProductRepository {
     public void delete(Product product){
         productCrudRepository.delete(product);
     }
+        public List<Product> productByPrice(double precio) {
+        return productCrudRepository.findByPriceLessThanEqual(precio);
+    }
+
+    public List<Product> findByDescriptionLike(String description) {
+        return productCrudRepository.findByDescriptionLike(description);
+      }
 }
