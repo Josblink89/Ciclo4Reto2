@@ -89,7 +89,7 @@ public class UserService {
     public boolean emailExists(String email) {
         return userRepository.emailExists(email);
     }
-    public List<User> birthtDayList (Date monthBirthtDay) {
+    public List<User> birthtDayList (String monthBirthtDay) {
         return userRepository.birthtDayList (monthBirthtDay);
     }
 
@@ -104,7 +104,5 @@ public class UserService {
     
     }
 
-    public List<User> birthtDayList(String monthBirthtDay) {
-        return null;
-    }
+   
 }

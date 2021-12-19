@@ -58,7 +58,7 @@ public class UserController {
     }
 
     @GetMapping("/birthday/{month}")
-    public List<User> birthDayList(@PathVariable("month") Date monthBirthtDay) {
+    public List<User> birthtDayList(@PathVariable("month") String monthBirthtDay) {
         return userService.birthtDayList(monthBirthtDay);
     }
 }
