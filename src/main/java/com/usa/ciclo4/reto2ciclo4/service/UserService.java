@@ -5,6 +5,7 @@ import com.usa.ciclo4.reto2ciclo4.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -88,7 +89,9 @@ public class UserService {
     public boolean emailExists(String email) {
         return userRepository.emailExists(email);
     }
-   
+    public List<User> birthtDayList (Date monthBirthtDay) {
+        return userRepository.birthtDayList (monthBirthtDay);
+    }
 
     public User authenticateUser (String email, String password) {
         Optional<User> user = userRepository.authenticateUser(email, password);
@@ -97,5 +100,11 @@ public class UserService {
         } else{
             return user.get();
         }
+
+    
+    }
+
+    public List<User> birthtDayList(String monthBirthtDay) {
+        return null;
     }
 }
